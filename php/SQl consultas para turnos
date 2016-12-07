@@ -1,0 +1,13 @@
+
+// consulta turno_agendado todo lo que hay
+SELECT barberos.nombrescompletos, turno.hora, turno_agendado.estado_turno, turno_agendado.fecha FROM barberos, turno_agendado, turno WHERE turno_agendado._id_turno = turno._id_turno AND turno_agendado._id_barbero = barberos._id_barbero
+
+// consulta baerbero_turno por fecha
+SELECT barberos.nombrescompletos, turno.hora, turno_agendado.estado_turno, turno_agendado.fecha FROM barberos, turno_agendado, turno WHERE turno_agendado._id_turno = turno._id_turno AND turno_agendado._id_barbero = barberos._id_barbero AND turno_agendado.fecha = '2016-11-08'
+
+// consulta barbero:turno por estado
+SELECT barberos.nombrescompletos, turno.hora, turno_agendado.estado_turno FROM barberos, turno_agendado, turno WHERE turno_agendado._id_turno_agendado = turno._id_turno AND turno_agendado._id_barbero = barberos._id_barbero AND turno_agendado.estado_turno = 'activo'
+
+
+// consulta turno_agendado saber cuando este libre
+SELECT barberos.nombrescompletos, turno.hora, turno_agendado.estado_turno, turno_agendado.fecha FROM barberos, turno_agendado, turno WHERE turno_agendado._id_turno = turno._id_turno AND turno_agendado._id_barbero = barberos._id_barbero AND turno_agendado.fecha = '2016-11-08' AND turno_agendado.estado_turno <> 'activo'
